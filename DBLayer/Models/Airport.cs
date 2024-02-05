@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DBLayer.Models
 {
-    internal class Airport
+    public class Airport
     {
         [Key]
         public int AirportId { get; set; }  

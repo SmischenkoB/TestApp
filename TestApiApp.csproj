@@ -7,11 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <Compile Remove="BusinessLogicUnitTests\**" />
+    <Compile Remove="BusinessLogic\**" />
+    <Compile Remove="DBLayer\**" />
+    <Content Remove="BusinessLogicUnitTests\**" />
+    <Content Remove="BusinessLogic\**" />
+    <Content Remove="DBLayer\**" />
+    <EmbeddedResource Remove="BusinessLogicUnitTests\**" />
+    <EmbeddedResource Remove="BusinessLogic\**" />
+    <EmbeddedResource Remove="DBLayer\**" />
+    <None Remove="BusinessLogicUnitTests\**" />
+    <None Remove="BusinessLogic\**" />
+    <None Remove="DBLayer\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DBLayer\DBLayer.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBLayer.Models
 {
-    internal class AirportGroup : Airport
+    public class AirportGroup : Airport
     {
         
     }

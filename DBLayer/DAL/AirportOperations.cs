@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DBLayer.DAL
 {
-    internal class AirportOperations : IDBOperations<Airport>
+    public class AirportOperations : IAirportOperations, IDisposable
     {
         public async Task<Airport> AddValueToDb(Airport value)
         {
@@ -19,11 +19,24 @@ namespace DBLayer.DAL
             }
         }
 
+        public void Dispose()
+        {
+            return; 
+        }
+
         public Task<List<Airport>> GetAll()
         {
             using (var db = new AirportContext())
             {
                 return db.Airports.ToListAsync();
+            }
+        }
+
+        public Task<Airport> GetById(int id)
+        {
+            using (var db = new AirportContext())
+            {
+                return db.Airports.FirstAsync(i => i.AirportId == id);
             }
         }
 

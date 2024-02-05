@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DBLayer.Models
 {
-    internal class Route
+    public class Route
     {
         [Key]
         public int Id { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DBLayer.Models
 {
-    internal class AirportContext : DbContext
+    public class AirportContext : DbContext
     {
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Country> Countries { get; set; }

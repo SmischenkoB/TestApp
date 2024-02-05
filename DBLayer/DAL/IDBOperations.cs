@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DBLayer.DAL
 {
-    internal interface IDBOperations<T>
+    public interface IDBOperations<T>
     {
         public Task<T> AddValueToDb(T value);
         public Task RemoveValueFromDb(T value);
         public Task<List<T>> GetAll();
+        public Task<T> GetById(int id);
     }
 }

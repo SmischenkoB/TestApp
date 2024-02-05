@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DBLayer.Models
 {
     [Index(nameof(Name), IsUnique = true)]
-    internal class Country
+    public class Country
     {
         [Key]
         public int Id { get; set; }
