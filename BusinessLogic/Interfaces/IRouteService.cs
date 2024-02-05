@@ -1,13 +1,13 @@
-﻿using DBLayer.Models;
+﻿using BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBLayer.DAL
+namespace BusinessLogic.Interfaces
 {
-    public interface IAirportOperations : IDBOperations<Airport>
+    public interface IRouteService : IService<RouteFEModel>
     {
     }
 }

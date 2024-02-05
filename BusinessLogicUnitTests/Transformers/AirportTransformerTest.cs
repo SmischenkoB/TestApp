@@ -1,9 +1,9 @@
 using BusinessLogic.Models;
 using BusinessLogic.Transformers;
 using DBLayer.Models;
-namespace BusinessLogicUnitTests
+namespace BusinessLogicUnitTests.Transformers
 {
-    public class TransformationTest
+    public class AirportTransformerTest
     {
         [Fact]
         public async void TransformAirportEntityFromDb()

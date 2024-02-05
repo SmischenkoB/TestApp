@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBLayer.DAL
+namespace DBLayer.Interfaces
 {
     public interface IDBOperations<T>
     {

@@ -9,43 +9,43 @@ using System.Threading.Tasks;
 
 namespace DBLayer.DAL
 {
-    public class AirportOperations : IAirportOperations, IDisposable
+    public class CountryOperations : ICountryOperations, IDisposable
     {
-        public async Task<Airport> AddValueToDb(Airport value)
+        public async Task<Country> AddValueToDb(Country value)
         {
             using (var db = new AirportContext())
             {
-                await db.Airports.AddAsync(value).AsTask().ContinueWith(i => db.SaveChangesAsync());
+                await db.Countries.AddAsync(value).AsTask().ContinueWith(i => db.SaveChangesAsync());
                 return value;
             }
         }
 
         public void Dispose()
         {
-            return; 
+            return;
         }
 
-        public Task<List<Airport>> GetAll()
+        public Task<List<Country>> GetAll()
         {
             using (var db = new AirportContext())
             {
-                return db.Airports.ToListAsync();
+                return db.Countries.ToListAsync();
             }
         }
 
-        public Task<Airport> GetById(int id)
+        public Task<Country> GetById(int id)
         {
             using (var db = new AirportContext())
             {
-                return db.Airports.FirstAsync(i => i.AirportId == id);
+                return db.Countries.FirstAsync(i => i.Id == id);
             }
         }
 
-        public Task RemoveValueFromDb(Airport value)
+        public Task RemoveValueFromDb(Country value)
         {
             using (var db = new AirportContext())
             {
-                db.Airports.Remove(value);
+                db.Countries.Remove(value);
                 return db.SaveChangesAsync();
             }
         }

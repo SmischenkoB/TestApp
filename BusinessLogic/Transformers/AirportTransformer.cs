@@ -12,7 +12,7 @@ namespace BusinessLogic.Transformers
     {
         public static async Task<AirportFEModel> TransformAirportEntityFromDb(Airport airport)
         {
-            AirportFEModel airportFEModel = new AirportFEModel() { AirportId = airport.AirportId, CountryName = airport.Country.Name, IATACode = airport.IATACode };
+            AirportFEModel airportFEModel = new AirportFEModel() { AirportId = airport.AirportId, CountryName = airport.Country?.Name, IATACode = airport.IATACode };
             airportFEModel.Type = airport.Arrival?.Count > 0 && airport.Departure?.Count > 0 ? "Departure and Arrival" : "Arrival Only";
             return airportFEModel;
         }
