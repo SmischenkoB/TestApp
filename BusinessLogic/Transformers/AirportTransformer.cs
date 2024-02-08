@@ -13,13 +13,13 @@ namespace BusinessLogic.Transformers
         public static async Task<AirportFEModel> TransformAirportEntityFromDb(Airport airport)
         {
             AirportFEModel airportFEModel = new AirportFEModel() { AirportId = airport.AirportId, CountryName = airport.Country?.Name, IATACode = airport.IATACode };
-            airportFEModel.Type = airport.Arrival?.Count > 0 && airport.Departure?.Count > 0 ? "Departure and Arrival" : "Arrival Only";
+            airportFEModel.Type = airport.AirportType.Name;
             return airportFEModel;
         }
         public static async Task<Airport> TransformAirportEntityToDb(AirportFEModel airport)
         {
             // add country Object after adding dbContext
-            return new Airport() { AirportId = airport.AirportId, IATACode = airport.IATACode };
+            return new Airport() { AirportId = airport.AirportId, IATACode = airport.IATACode, AirportTypeId = airport.AirportId };
         }
     }
 }

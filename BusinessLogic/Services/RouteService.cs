@@ -37,7 +37,7 @@ namespace BusinessLogic.Services
                 throw new ArgumentException("airports not exists");
             }
 
-            if(_airportOperations.GetById(value.DepartureAirportId).Result?.Departure.Count == 0)
+            if(_airportOperations.GetById(value.DepartureAirportId).Result?.AirportType.Name == "Arrival Only")
             {
                 throw new ArgumentException("airports type is wrong");
             }

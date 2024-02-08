@@ -8,7 +8,7 @@ namespace BusinessLogicUnitTests.Transformers
         [Fact]
         public async void TransformAirportEntityFromDb()
         {
-            Airport airport = new Airport() { AirportId = 7, IATACode = "LGW", Country = new Country() { Id = 7, Name = "London" } };
+            Airport airport = new Airport() { AirportId = 7, IATACode = "LGW", Country = new Country() { Id = 7, Name = "London" }, AirportType = new AirportType() { Id = 7, Name = "Arrival Only" } };
 
             var res = await AirportTransformer.TransformAirportEntityFromDb(airport);
 
@@ -16,6 +16,7 @@ namespace BusinessLogicUnitTests.Transformers
             Assert.Equal(airport.AirportId, res.AirportId);
             Assert.Equal(airport.IATACode, res.IATACode);
             Assert.Equal(airport.Country.Name, res.CountryName);
+            Assert.Equal(airport.AirportType.Name, res.Type);
         }
 
         [Fact]
@@ -28,6 +29,7 @@ namespace BusinessLogicUnitTests.Transformers
             Assert.NotNull(res);
             Assert.Equal(airport.IATACode, res.IATACode);
             Assert.Equal(airport.AirportId, res.AirportId);
+            Assert.Equal(7, res.AirportTypeId);
         }
     }
 }

@@ -15,9 +15,8 @@ namespace DBLayer.Models
         public string IATACode { get; set; }
 
         public Country Country { get; set; }
-
-        public ICollection<Route> Departure { get; set; }
-        public ICollection<Route> Arrival { get; set; }
+        public int AirportTypeId {  get; set; }
+        public AirportType AirportType { get; set; }
 
     }
 }
